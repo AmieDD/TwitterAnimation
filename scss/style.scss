@@ -1,0 +1,54 @@
+// Twitter: @amiedoubled
+// www.amiedd.com
+
+$logocolor: #5EA9DD;
+$bkgcolor: #FFFFFF;
+$speed: 1s;
+$minstroke: 1px;
+$maxstroke: 4px;
+$fillopacity0: 0.15;
+$fillopacity1: 0.5;
+$size: 200px;
+
+//SCSS
+
+body {
+  background: $bkgcolor;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  width: $size;
+  height: $size;
+  stroke-width: 2;
+  fill: $logocolor;
+  stroke: $logocolor;
+  stroke-width: 1px;
+  animation: tweetloading $speed linear infinite;
+}
+
+@keyframes tweetloading {
+  0% {
+    stroke-dashoffset: 1200;
+    fill-opacity: $fillopacity0;
+    stroke-width: $minstroke;
+  }
+
+  50% {
+    fill-opacity: $fillopacity1;
+    stroke-width: $maxstroke;
+  }
+
+  100% {
+    stroke-dashoffset: -1000;
+    fill-opacity: $fillopacity0;
+    stroke-width: $minstroke;
+  }
+}
